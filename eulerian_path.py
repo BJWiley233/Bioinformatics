@@ -8,6 +8,8 @@ Created on Wed Jan  2 05:54:57 2019
 
 import networkx as nx
 import matplotlib.pyplot as plt
+import sys
+from sys import stdin, stderr, stdout, exit
 
 sign = '->'
 
@@ -15,12 +17,12 @@ sign = '->'
 '''with open ('test5.txt', 'r') as in_file:
     lines = in_file.read().split('\n')
 '''
-fin = open('bruijn3.txt', 'r')
+'''fin = open('bruijn3.txt', 'r')
 fout=open('output7.txt', 'w')
 reads=[]
 for line in fin.readlines():
     reads.append(line.replace('\n',''))
-reads = reads[1:]
+reads = reads[1:]'''
 
 def debruijn_Graph(reads):
     patterns=[]
@@ -119,17 +121,19 @@ def StringReconstruction(reads):
     
     return genome
 
-fin = open('dataset_203_7.txt', 'r')
-fout=open('genome0.txt', 'w')
+#fin = open(stdin)
+#fout=open(stdout, 'w')
 reads=[]
-for line in fin.readlines():
+for line in stdin.readlines():
+#for line in fin.readlines():
     reads.append(line.replace('\n',''))
 reads = reads[1:]
     
 genome = StringReconstruction(reads)
 
-fout.write(genome)
-fin.close()
-fout.close()
+#fout.write(genome)
+stdout.write(genome)
+#fin.close()
+#fout.close()
 
 #nx.draw_networkx(G, arrows=True)

@@ -32,7 +32,9 @@ def bruijn_graph(lines):
             Debruin_list2[[key for key in Debruin_list[string]][0]].append(Debruin_list[string][string[:-1]][0])
 
 
-    
+    TGCCCCTTACGA': ['TAACCATGCCCCTTACGAC'],
+ 'TAACCATGCCCCTTACGAC': ['AACCATGCCCCTTACGACC'],
+
     for k, v in sorted(Debruin_list2.items()):
         if Debruin_list2[k]:
             final_list.append(str(k) + sign + ','.join('{}'.format(v) for v in sorted(Debruin_list2[k])))
